@@ -1,0 +1,71 @@
+<ion-side-menus>
+  <!--左侧边栏-->
+  <ion-side-menu side="left" style="padding-top: 44px;">
+    <ion-header-bar class="bar-assertive">
+      <h1 class="title">个人中心</h1>
+    </ion-header-bar>
+    <ion-list>
+      <!--个人信息入口-->
+      <a class="item item-thumbnail-left" href="#/uMain/Personal" menu-close>
+        <img src="images/toux.png">
+        <br>
+        <h2>小艾</h2>
+        <p>愿望贡献￥:45533 </p>
+      </a>
+      <ion-item class="mi-item-divider"></ion-item>
+      <a class="item item-icon-left item-icon-right" href="#/uMain/Promotion" menu-close>
+        <i class="icon mc-sidemenu-h"></i>
+        活动中心
+        <i class="icon ion-chevron-right"></i>
+      </a>
+      <ion-item class="mi-item-divider"></ion-item>
+      <a class="item item-icon-left item-icon-right" href="#/uMain/Remind" menu-close>
+        <i class="icon mc-sidemenu-j"></i>
+        记账提醒
+        <i class="icon ion-chevron-right"></i>
+      </a>
+      <ion-item class="mi-item-divider"></ion-item>
+      <a class="item item-icon-left item-icon-right" href="#/uMain/Password" menu-close>
+        <i class="icon mc-sidemenu-x"></i>
+        修改密码
+        <i class="icon ion-chevron-right"></i>
+      </a>
+      <a class="item item-icon-left item-icon-right" href="#/uMain/Tickling" menu-close>
+        <i class="icon mc-sidemenu-w"></i>
+        问题与反馈
+        <i class="icon ion-chevron-right"></i>
+      </a>
+      <a class="item item-icon-left item-icon-right" href="" menu-close>
+        <i class="icon mc-sidemenu-g"></i>
+        关于爱存记
+        <i class="icon ion-chevron-right"></i>
+      </a>
+      <ion-item class="mi-item-divider"></ion-item>
+      <a class="item item-icon-left item-icon-right" href="#/uLogin">
+        <i class="icon mc-sidemenu-t"></i>
+        退出登录
+        <i class="icon ion-chevron-right"></i>
+      </a>
+    </ion-list>
+  </ion-side-menu>
+  <!--主题内容-->
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar-assertive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <!--底部导航-->
+    <ion-tabs class="tabs-icon-top" ng-class="{'tabs-item-hide': $root.hideTabs}">
+      <ion-tab title="日常" href="#/uMain/Daily" on-select="tabSelected()" icon-on="mc-bar-daily" icon-off="mc-bar-dailyo">
+        <ion-nav-view name="daily-tab"></ion-nav-view>
+      </ion-tab>
+      <ion-tab title="愿望" href="#/uMain/Wish" icon-on="mc-bar-wish" icon-off="mc-bar-wisho">
+        <ion-nav-view name="wish-tab"></ion-nav-view>
+      </ion-tab>
+      <ion-tab title="动态" href="#/uMain/Trends" icon-on="mc-bar-trends" icon-off="mc-bar-trendso">
+        <ion-nav-view name="trends-tab"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-side-menu-content>
+</ion-side-menus>
+

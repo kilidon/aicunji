@@ -1,0 +1,32 @@
+<ion-view title="登录" hide-nav-bar="true">
+  <ion-content style="background-color: #f5f5f5">
+    <div class="row">
+      <div class="col col-offset-33" style="padding-top: 80px">
+        <img src="images/login_b.png" width="40%">
+      </div>
+    </div>
+    <div class="row" style="padding-top:60px">
+      <div class="col col-80 col-offset-10">
+        <label class="mf-label">
+          <input class="mc-login-n" ng-model="userPhone" ng-class="focused?'focused':''" type="text" placeholder="请输入手机号">
+        </label>
+        <label class="mf-label" style="padding-top: 18px">
+          <input class="mc-login-p" ng-model="userPassword" ng-class="focused?'focused':''" type="password" placeholder="请输入密码">
+        </label>
+        <div class="lg-button" style="padding-top: 10px">
+          <a href="">忘记密码</a>
+          <a href="#/Log">注册帐号</a>
+        </div>
+        <div class="text-center" style="padding-top: 60px">
+          <button class="dl-button" ng-click="jump('main.daily')">登录</button>
+        </div>
+      </div>
+    </div>
+    <div class="other-login-ls" style="padding-top: 70px">
+      <a class="ion mc-login-qq" href=""></a>
+      <a class="ion mc-login-wx" href=""></a>
+      <a class="ion mc-login-wb" href=""></a>
+    </div>
+  </ion-content>
+</ion-view>
+

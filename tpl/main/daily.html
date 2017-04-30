@@ -1,0 +1,89 @@
+<ion-view title="首页" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    <div class="button-bar-inline button-bar" style="display: inline-block;padding-top: 7px">
+      <button class="button activate" ng-click="tabSurplus($event)">记账</button>
+      <button class="button" ng-click="tabTask($event)">任务</button>
+    </div>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-android-add" ng-click="openPopover($event)"></button>
+  </ion-nav-buttons>
+  <!--记账浮动按钮-->
+  <section class="mb-main-float">
+    <div class="float-btn-group">
+      <button class="btn-float btn-triger"><i class="ion-edit"></i></button>
+      <div class="btn-list">
+        <a href="#/uMain/Write" class="btn-float"><i class="mc-note-write"></i></a>
+        <a href="#/uMain/Speech" class="btn-float"><i class="mc-note-speech"> </i></a>
+        <a href="#/uMain/Shoot" class="btn-float"><i class="mc-note-shoot"></i></a>
+      </div>
+    </div>
+  </section>
+  <ion-content>
+    <!--记账页面-->
+    <div ng-show="surplusToggle" style="padding-bottom: 8px">
+      <!--top-->
+      <div class="mb-daily-surplus">
+        <div>
+          <p>7月结余</p>
+          <p><span>{{data.surplus | mfint}}</span>.{{data.surplus | limitTo:-2}}</p>
+        </div>
+        <div class="row">
+          <div class="col col-33" ng-click="jump('main.takings')">
+            <p>6400.00</p>
+            <a>7月收入</a>
+          </div>
+          <div class="col col-33">
+            <button ng-click="jump('main.addbud')">添加预算</button>
+          </div>
+          <div class="col col-33" ng-click="jump('main.pay')">
+            <p>3000.00</p>
+            <a>7月支出</a>
+          </div>
+        </div>
+      </div>
+      <!--mid-->
+      <div class="mb-daily-chart">
+        <div>
+          <p>22日</p>
+          <p>星期二</p>
+        </div>
+        <!--canvas绘图-->
+        <canvas id="dailyCanvas" width="500" height="300" style="width: 94%;margin-top:10px;background: #fff;border-radius: 5px" on-swipe="cavSwipe($event)"></canvas>
+      </div>
+      <!--foot-->
+      <div class="ml-daily list list-inset">
+        <a class="item item-icon-left item-icon-right" href="">
+          <i class="icon mc-daily-week"></i>
+          <h3>本周</h3>
+          <p>还没有记过帐</p>
+          <i class="icon ion-chevron-right"></i>
+        </a>
+        <a class="item item-icon-left item-icon-right" href="">
+          <i class="icon mc-daily-month"></i>
+          <h3>本月</h3>
+          <p>07月1日-07月24日</p>
+          <i class="icon ion-chevron-right"></i>
+        </a>
+        <a class="item item-icon-left item-icon-right" href="">
+          <i class="icon mc-daily-year"></i>
+          <h3>本年</h3>
+          <p>2017年-2018年</p>
+          <i class="icon ion-chevron-right"></i>
+        </a>
+      </div>
+      <div style="text-align: center">
+        <button ng-click="load()" class="mb-daily-foot">定制看板</button>
+      </div>
+    </div>
+    <!--任务页面-->
+    <div ng-show="taskToggle">
+      <img src="images/pages/daily-task.jpg" width="100%">
+    </div>
+  </ion-content>
+</ion-view>
+
+
